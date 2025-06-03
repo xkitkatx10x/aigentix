@@ -23,6 +23,9 @@ const Contacts = () => {
   const { register, handleSubmit, reset, formState: { errors } } = useForm<ContactFormData>();
   const { toast } = useToast();
 
+  // Inizializza EmailJS
+  emailjs.init('La04ezzEXL6UXkhf_');
+
   const onSubmit = async (data: ContactFormData) => {
     try {
       await emailjs.send(
@@ -45,6 +48,7 @@ const Contacts = () => {
       });
       reset();
     } catch (error) {
+      console.error('Errore nell\'invio:', error);
       toast({
         title: "Errore nell'invio",
         description: "Si è verificato un errore. Riprova più tardi.",
@@ -287,3 +291,33 @@ const Contacts = () => {
 };
 
 export default Contacts;
+
+const onSubmit = async (data: ContactFormData) => {
+  try {
+    await emailjs.send(
+      'service_aju0xfc',
+      'template_thw7g59',
+      {
+        from_name: data.name,
+        to_email: 'aigentixofficial@gmail.com',
+        from_email: data.email,
+        company: data.company,
+        phone: data.phone,
+        message: data.message,
+      },
+      'La04ezzEXL6UXkhf_'
+    );
+
+    toast({
+      title: "Messaggio inviato!",
+      description: "Ti ricontatteremo entro 24 ore.",
+    });
+    reset();
+  } catch (error) {
+    toast({
+      title: "Errore nell'invio",
+      description: "Si è verificato un errore. Riprova più tardi.",
+      variant: "destructive",
+    });
+  }
+};
