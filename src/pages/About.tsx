@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle, Target, Lightbulb, Users, Shield, Rocket, Clock, TrendingUp, Zap, ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const About = () => {
   return (
@@ -299,8 +300,13 @@ const About = () => {
           </Button>
         </div>
       </section>
+      
+      {/* Aggiunta del Footer */}
+      <Footer />
     </div>
   );
 };
 
 export default About;
+
+Footer;

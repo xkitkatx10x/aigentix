@@ -8,6 +8,8 @@ import { useForm } from "react-hook-form";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, MapPin, Clock } from 'lucide-react';
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import emailjs from '@emailjs/browser';
 
 interface ContactFormData {
   name: string;
@@ -21,13 +23,34 @@ const Contacts = () => {
   const { register, handleSubmit, reset, formState: { errors } } = useForm<ContactFormData>();
   const { toast } = useToast();
 
-  const onSubmit = (data: ContactFormData) => {
-    console.log('Form submitted:', data);
-    toast({
-      title: "Messaggio inviato!",
-      description: "Ti ricontatteremo entro 24 ore.",
-    });
-    reset();
+  const onSubmit = async (data: ContactFormData) => {
+    try {
+      await emailjs.send(
+        'service_aju0xfc',
+        'template_thw7g59',
+        {
+          from_name: data.name,
+          to_email: 'aigentixofficial@gmail.com',
+          from_email: data.email,
+          company: data.company,
+          phone: data.phone,
+          message: data.message,
+        },
+        'La04ezzEXL6UXkhf_'
+      );
+
+      toast({
+        title: "Messaggio inviato!",
+        description: "Ti ricontatteremo entro 24 ore.",
+      });
+      reset();
+    } catch (error) {
+      toast({
+        title: "Errore nell'invio",
+        description: "Si è verificato un errore. Riprova più tardi.",
+        variant: "destructive",
+      });
+    }
   };
 
   return (
@@ -155,7 +178,7 @@ const Contacts = () => {
                       </div>
                       <div>
                         <h4 className="font-semibold text-gray-900">Email</h4>
-                        <p className="text-gray-600">info@automazioneai.it</p>
+                        <p className="text-gray-600">aigentixofficial@gmail.com</p>
                         <p className="text-sm text-gray-500">Ti risponderemo entro 4 ore</p>
                       </div>
                     </div>
@@ -258,6 +281,7 @@ const Contacts = () => {
           </div>
         </section>
       </main>
+      <Footer />
     </div>
   );
 };

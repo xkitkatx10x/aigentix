@@ -1,7 +1,9 @@
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Check, Settings } from "lucide-react";
+import { Link } from "react-router-dom";
 const Services = () => {
   const services = [{
     title: "Automazione E-commerce",
@@ -47,12 +49,14 @@ const Services = () => {
               Soluzioni di automazione AI personalizzate per far crescere il tuo business
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-white text-brand-blue-600 hover:bg-gray-100 text-lg px-8">
-                Scopri le Soluzioni
-              </Button>
-              <Button size="lg" variant="outline" className="border-white hover:text-brand-blue-600 text-lg px-8 bg-orange-600 hover:bg-orange-500 text-slate-100">
-                Consulenza Gratuita
-              </Button>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link to="/contatti">
+                  <Button size="lg" variant="outline" className="border-white hover:text-brand-blue-600 text-lg px-8 bg-orange-600 hover:bg-orange-500 text-slate-100">
+                    Consulenza Gratuita
+                  </Button>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -131,15 +135,15 @@ const Services = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-white text-brand-blue-600 hover:bg-gray-100 text-lg px-8 py-3">
-              Consulenza Gratuita
-            </Button>
-            <Button size="lg" variant="outline" className="border-white hover:text-brand-blue-600 text-lg px-8 py-3 bg-orange-600 hover:bg-orange-500 text-gray-50">
-              Contattaci Ora
-            </Button>
+            <Link to="/contatti">
+              <Button size="lg" variant="outline" className="border-white hover:text-brand-blue-600 text-lg px-8 py-3 bg-orange-600 hover:bg-orange-500 text-gray-50">
+                Contattaci Ora
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
+      <Footer />
     </div>;
 };
 export default Services;

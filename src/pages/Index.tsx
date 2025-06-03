@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ShoppingCart, Calendar, MessageCircle, FileText, RefreshCw, UserCheck, CheckCircle, Star, ArrowRight, Zap, Target, TrendingUp, Clock, Mail, MapPin } from "lucide-react";
 import Header from "@/components/Header";
+import { Link } from "react-router-dom";
 
 const Index = () => {
   return <div className="min-h-screen bg-white">
@@ -22,12 +23,16 @@ const Index = () => {
               Diamo potere alle aziende con automazioni intelligenti che eliminano attività ripetitive e fanno crescere l'efficienza. Tu pensa alla strategia, noi pensiamo ai processi.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-brand-orange-500 hover:bg-brand-orange-600 text-white px-8 py-4 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                👉 Prenota una Consulenza Gratuita
-              </Button>
-              <Button variant="outline" size="lg" className="border-2 border-white hover:bg-white hover:text-brand-blue-900 px-8 py-4 text-lg rounded-xl text-slate-900">
-                🚀 Scopri cosa possiamo automatizzare per te
-              </Button>
+              <Link to="/contatti">
+                <Button size="lg" className="bg-brand-orange-500 hover:bg-brand-orange-600 text-white px-8 py-4 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                  👉 Prenota una Consulenza Gratuita
+                </Button>
+              </Link>
+              <Link to="/casi-studio">
+                <Button variant="outline" size="lg" className="border-2 border-white hover:bg-white hover:text-brand-blue-900 px-8 py-4 text-lg rounded-xl text-slate-900">
+                  🚀 Scopri cosa possiamo automatizzare per te
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -263,10 +268,12 @@ const Index = () => {
             Ti basta una consulenza gratuita per scoprire cosa possiamo automatizzare nella tua azienda.
           </p>
            
-          <Button className="bg-brand-orange-500 hover:bg-brand-orange-600 text-white px-8 py-4 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-            📩 Richiedi la Tua Consulenza Gratuita
-            <ArrowRight className="ml-2 w-5 h-5" />
-          </Button>
+          <Link to="/contatti">
+            <Button className="bg-brand-orange-500 hover:bg-brand-orange-600 text-white px-8 py-4 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+              📩 Richiedi la Tua Consulenza Gratuita
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </Button>
+          </Link>
         </div>
       </section>
 
@@ -303,7 +310,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Footer */}
+      {/* CTA Section */}
       <footer className="bg-gray-900 text-white py-16" id="contatti">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">

@@ -12,7 +12,7 @@ const Header = () => {
     { title: "Servizi", href: "/servizi" },
     { title: "Casi Studio", href: "/casi-studio" },
     { title: "Chi Siamo", href: "/chi-siamo" },
-    { title: "Blog", href: "#blog" },
+    //{ title: "Blog", href: "#blog" },
     { title: "Contatti", href: "/contatti" }
   ];
 
@@ -48,8 +48,8 @@ const Header = () => {
                 </a>
               )
             ))}
-            <Button className="bg-brand-orange-500 hover:bg-brand-orange-600 text-white">
-              Consulenza Gratuita
+            <Button className="bg-brand-orange-500 hover:bg-brand-orange-600 text-white" asChild>
+              <Link to="/consulenza-gratuita">Consulenza Gratuita</Link>
             </Button>
           </nav>
 
@@ -91,8 +91,8 @@ const Header = () => {
                   </a>
                 )
               ))}
-              <Button className="bg-brand-orange-500 hover:bg-brand-orange-600 text-white w-fit">
-                Consulenza Gratuita
+              <Button className="bg-brand-orange-500 hover:bg-brand-orange-600 text-white w-fit" asChild>
+                <Link to="/consulenza-gratuita">Consulenza Gratuita</Link>
               </Button>
             </nav>
           </div>

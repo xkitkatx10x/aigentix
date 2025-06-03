@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -117,9 +118,11 @@ const CaseStudies = () => {
               <Button size="lg" className="bg-white text-brand-blue-600 hover:bg-gray-100 text-lg px-8">
                 Vuoi ottenere risultati simili?
               </Button>
-              <Button size="lg" variant="outline" className="border-white hover:text-brand-blue-600 text-lg px-8 bg-orange-600 hover:bg-orange-500 text-slate-100">
-                Parla con un esperto
-              </Button>
+              <Link to="/contatti">
+                <Button size="lg" variant="outline" className="border-white hover:text-brand-blue-600 text-lg px-8 bg-orange-600 hover:bg-orange-500 text-slate-100">
+                  Parla con un esperto
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -322,6 +325,7 @@ const CaseStudies = () => {
           </Button>
         </div>
       </section>
+      <Footer />
     </div>
   );
 };
