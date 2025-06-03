@@ -29,9 +29,7 @@ const Index = () => {
                 </Button>
               </Link>
               <Link to="/casi-studio">
-                <Button variant="outline" size="lg" className="border-2 border-white hover:bg-white hover:text-brand-blue-900 px-8 py-4 text-lg rounded-xl text-slate-900">
-                  🚀 Scopri cosa possiamo automatizzare per te
-                </Button>
+                
               </Link>
             </div>
           </div>
