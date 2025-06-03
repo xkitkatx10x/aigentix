@@ -322,11 +322,11 @@ const Index = () => {
               <div className="space-y-2">
                 <div className="flex items-center">
                   <Mail className="w-5 h-5 mr-3 text-brand-orange-500" />
-                  <span>info@tuaagenzia.it</span>
+                  <span>aigentixofficial@gmail.com</span>
                 </div>
                 <div className="flex items-center">
                   <MapPin className="w-5 h-5 mr-3 text-brand-orange-500" />
-                  <span>Milano | Operiamo in tutta Italia</span>
+                  <span>Operiamo in tutta Italia</span>
                 </div>
               </div>
             </div>
@@ -336,7 +336,7 @@ const Index = () => {
               <ul className="space-y-2 text-gray-300">
                 <li><a href="#" className="hover:text-brand-orange-500 transition-colors">Privacy</a></li>
                 <li><a href="#" className="hover:text-brand-orange-500 transition-colors">Contatti</a></li>
-                <li><a href="#" className="hover:text-brand-orange-500 transition-colors">Blog</a></li>
+                
                 <li><a href="#" className="hover:text-brand-orange-500 transition-colors">Lavora con noi</a></li>
               </ul>
             </div>
@@ -359,7 +359,7 @@ const Index = () => {
           </div>
           
           <div className="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 AutomazioneAI. Tutti i diritti riservati.</p>
+            <p>&copy; 2025 Aigentix. Tutti i diritti riservati.</p>
           </div>
         </div>
       </footer>
